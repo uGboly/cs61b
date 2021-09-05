@@ -46,10 +46,9 @@ public class ArrayDeque <T> {
     private ArrayDeque(ArrayDeque<T> other) {
         size = other.size;
         items = (T[]) new Object[other.items.length];
-        int start = addOne(other.nextFirst);
 
         for(int i = 0; i < size; i++ ) {
-            items[i] = other.items[addOne(start+i)];
+            items[i] = other.items[addOne(other.nextFirst+i)];
         }
 
         nextFirst = items.length - 1;
