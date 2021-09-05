@@ -23,12 +23,6 @@ public class ArrayDeque <T>{
         System.arraycopy(other.items,0,items,0,size);
     }
 
-    public void bigger(){
-        T[] temp=(T[]) new Object[items.length*2];
-        System.arraycopy(items,0,temp,0,size);
-    }
-
-
     public void addLast(T x) {
         if(size == items.length){
             T[] temp = (T[]) new Object[items.length*2];
@@ -36,8 +30,8 @@ public class ArrayDeque <T>{
 
             items = temp;
         }
-        size++;
         items[size] = x;
+        size++;
     }
 
     public void addFirst(T x) {
