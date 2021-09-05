@@ -103,7 +103,7 @@ public class ArrayDeque <T> {
 
 
         if (items.length >= 16 && size < (items.length/4)) {
-            resize(size/2);
+            resize(items.length/2);
         }
         return rm;
     }
@@ -118,7 +118,7 @@ public class ArrayDeque <T> {
         size--;
 
         if (items.length >= 16 && size < (items.length/4)) {
-            resize(size/2);
+            resize(items.length/2);
         }
         return rm;
     }
