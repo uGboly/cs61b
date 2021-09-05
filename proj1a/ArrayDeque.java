@@ -53,11 +53,11 @@ public class ArrayDeque <T>{
         T firstitem = get(0);
         size--;
 
-        for(int i = 0; i < size-1; i++){
+        for (int i = 0; i < size-1; i++){
             items[i]=items[i+1];
         }
 
-        if(size / items.length<0.25){
+        if (items.length > 200 && size / items.length<0.25){
             T[] temp = (T[]) new Object[items.length/2];
             System.arraycopy(items,0,temp,0,size);
             items = temp;
@@ -68,7 +68,7 @@ public class ArrayDeque <T>{
 
     public T removeLast(){
         size--;
-        if(size / items.length<0.25){
+        if (items.length > 200 && size / items.length<0.25){
             T[] temp = (T[]) new Object[items.length/2];
             System.arraycopy(items,0,temp,0,size);
             items = temp;
