@@ -8,6 +8,14 @@ public class ArrayDeque <T>{
         size = 0;
     }
 
+    public int size(){
+        return size;
+    }
+
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
     public ArrayDeque(ArrayDeque other){
         size = other.size;
         items = (T[]) new Object[other.items.length];
@@ -32,7 +40,7 @@ public class ArrayDeque <T>{
         items[size] = x;
     }
 
-    public void addfirst(T x) {
+    public void addFirst(T x) {
         if(size == items.length){
             T[] temp = (T[]) new Object[items.length*2];
             System.arraycopy(items,0,temp,1,size);
@@ -47,7 +55,7 @@ public class ArrayDeque <T>{
         return items[index];
     }
 
-    public T removefirst(){
+    public T removeFirst(){
         T firstitem = get(0);
         size--;
 
@@ -64,7 +72,7 @@ public class ArrayDeque <T>{
         return firstitem;
     }
 
-    public T removelast(){
+    public T removeLast(){
         size--;
         if(size / items.length<0.25){
             T[] temp = (T[]) new Object[items.length/2];
