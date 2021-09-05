@@ -108,14 +108,14 @@ public class IntList {
         return new IntList(A.first, catenate(A.rest, B));
     }
 
-    public static IntList reserve(IntList L) {
+    public static IntList reverse(IntList L) {
         if (L == null || L.rest==null) {
             return L;
         }
 
         IntList ptr = L.rest;
         L.rest = null;
-        IntList res = reserve(ptr);
+        IntList res = reverse(ptr);
         ptr.rest = L;
 
         return res;
