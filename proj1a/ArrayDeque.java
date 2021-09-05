@@ -20,7 +20,7 @@ public class ArrayDeque <T> {
         return size == 0;
     }
 
-    public int addOne(int a) {
+    private int addOne(int a) {
         return (a + 1) % items.length;
     }
 
@@ -77,7 +77,7 @@ public class ArrayDeque <T> {
         size++;
     }
 
-    public  T get(int index) {
+    public T get(int index) {
         if (index >= size) {
             return null;
         }
@@ -98,7 +98,7 @@ public class ArrayDeque <T> {
         }
 
         T rm = items[addOne(nextFirst)];
-        nextFirst = subOne(nextFirst);
+        nextFirst = addOne(nextFirst);
         size--;
 
 
@@ -114,7 +114,7 @@ public class ArrayDeque <T> {
         }
 
         T rm = items[subOne(nextLast)];
-        nextLast = addOne(nextLast);
+        nextLast = subOne(nextLast);
         size--;
 
         if (items.length >= 16 && size < (items.length/4)) {

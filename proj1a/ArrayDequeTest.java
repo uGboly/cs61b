@@ -84,6 +84,7 @@ public class ArrayDequeTest {
         l.addLast(0);
         l.addLast(1);
         l.addLast(2);
+        l.addFirst(3);
 
         System.out.println(l.get(0)+" "+l.get(2));
 
