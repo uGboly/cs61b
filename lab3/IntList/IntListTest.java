@@ -67,13 +67,13 @@ public class IntListTest {
     }
 
     @Test
-    public void testReserve(){
+    public void testReverse(){
         IntList A = IntList.of(1, 2, 3, 4);
         IntList B = IntList.of(4, 3, 2, 1);
 
-        assertEquals(A, IntList.Reserve(B));
-        assertNotEquals(A, IntList.Reserve(A));
-        assertEquals(null, IntList.Reserve(null));
+        assertEquals(A, IntList.reverse(B));
+        assertNotEquals(A, IntList.reverse(A));
+        assertEquals(null, IntList.reverse(null));
     }
 
     /** If you're running this from the command line, you'll need
