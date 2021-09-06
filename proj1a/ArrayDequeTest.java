@@ -81,12 +81,11 @@ public class ArrayDequeTest {
         System.out.println("Running get test.");
 
         ArrayDeque<Integer> l = new ArrayDeque<Integer>();
-        l.addLast(0);
-        l.addLast(1);
-        l.addLast(2);
-        l.addFirst(3);
+        for (int i = 0; i < 50; i++) {
+            l.addLast(i);
+        }
 
-        System.out.println(l.get(0)+" "+l.get(2));
+        System.out.println(l.removeLast()+" "+l.get(0)+" "+l.get(1));
 
     }
 

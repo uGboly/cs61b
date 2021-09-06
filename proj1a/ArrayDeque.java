@@ -30,10 +30,9 @@ public class ArrayDeque <T> {
 
     private void resize(int sz) {
         T[] newItems = (T[]) new Object[sz];
-        int start = addOne(nextFirst);
 
         for(int i = 0; i < size; i++) {
-            newItems[i] = items[addOne(start+i)];
+            newItems[i] = items[addOne(nextFirst+i)];
         }
 
         items = newItems;
