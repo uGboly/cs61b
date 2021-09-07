@@ -41,12 +41,12 @@ public class TestClorus {
 
 
         //Plips seen ; attack
-        c = new Clorus(1.2);
+        c = new Clorus();
         HashMap<Direction, Occupant> leftPlip = new HashMap<Direction, Occupant>();
-        surrounded.put(Direction.TOP, new Empty());
-        surrounded.put(Direction.BOTTOM, new Empty());
-        surrounded.put(Direction.LEFT, new Plip());
-        surrounded.put(Direction.RIGHT, new Empty());
+        leftPlip.put(Direction.TOP, new Empty());
+        leftPlip.put(Direction.BOTTOM, new Empty());
+        leftPlip.put(Direction.LEFT, new Plip());
+        leftPlip.put(Direction.RIGHT, new Empty());
 
         actual = c.chooseAction(leftPlip);
         expected = new Action(Action.ActionType.ATTACK, Direction.LEFT);
@@ -56,12 +56,12 @@ public class TestClorus {
 
         // Energy >= 1; replicate towards an empty space.
 
-        c = new Clorus(1.2);
+        c = new Clorus();
         HashMap<Direction, Occupant> allempty = new HashMap<Direction, Occupant>();
-        surrounded.put(Direction.TOP, new Empty());
-        surrounded.put(Direction.BOTTOM, new Empty());
-        surrounded.put(Direction.LEFT, new Empty());
-        surrounded.put(Direction.RIGHT, new Empty());
+        allempty.put(Direction.TOP, new Empty());
+        allempty.put(Direction.BOTTOM, new Empty());
+        allempty.put(Direction.LEFT, new Empty());
+        allempty.put(Direction.RIGHT, new Empty());
 
         actual = c.chooseAction(allempty);
         Action unexpected = new Action(Action.ActionType.STAY);
@@ -73,10 +73,10 @@ public class TestClorus {
         c = new Clorus(0.1);
 
         HashMap<Direction, Occupant> bottomEmpty = new HashMap<Direction, Occupant>();
-        surrounded.put(Direction.TOP, new Impassible());
-        surrounded.put(Direction.BOTTOM, new Empty());
-        surrounded.put(Direction.LEFT, new Impassible());
-        surrounded.put(Direction.RIGHT, new Impassible());
+        bottomEmpty.put(Direction.TOP, new Impassible());
+        bottomEmpty.put(Direction.BOTTOM, new Empty());
+        bottomEmpty.put(Direction.LEFT, new Impassible());
+        bottomEmpty.put(Direction.RIGHT, new Impassible());
 
         actual = c.chooseAction(bottomEmpty);
         expected = new Action(Action.ActionType.MOVE, Direction.BOTTOM);
