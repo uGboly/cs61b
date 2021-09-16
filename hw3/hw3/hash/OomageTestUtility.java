@@ -15,7 +15,7 @@ public class OomageTestUtility {
         Map<Integer, Integer> m = new HashMap<Integer, Integer>();
         for (Oomage o : oomages){
             int bucket = (o.hashCode() & 0x7FFFFFFF) % M;
-            if (m.containsKey(M)) {
+            if (m.containsKey(bucket)) {
                 m.replace(bucket, m.get(bucket)+1);
             }else {
                 m.put(bucket, 1);
@@ -23,7 +23,7 @@ public class OomageTestUtility {
         }
 
         for (int i : m.values()){
-            if ((i * 2.5 > M) || (i * 50 < M)) {
+            if ((i * 2.5 > oomages.size()) || (i * 50 < oomages.size())) {
                 return false;
             }
         }
