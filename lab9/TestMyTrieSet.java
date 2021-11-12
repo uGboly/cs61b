@@ -1,5 +1,7 @@
 import static org.junit.Assert.*;
 import org.junit.Test;
+
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -38,6 +40,7 @@ public class TestMyTrieSet {
         String[] otherStrings = new String[]{"a", "awls", "hello"};
 
         MyTrieSet t = new MyTrieSet();
+
         for (String s: saStrings) {
             t.add(s);
         }
@@ -53,6 +56,22 @@ public class TestMyTrieSet {
             assertFalse(keys.contains(s));
         }
     }
+
+//    @Test
+//    public void colTest() {
+//        String[] Strings = new String[]{"same", "sam", "sad", "sap", "a", "awls", "hello"};
+//        List<String> l = new ArrayList<>();
+//        MyTrieSet t = new MyTrieSet();
+//        for (String s: Strings) {
+//            t.add(s);
+//            l.add(s);
+//        }
+//
+//        List<String> keys = t.collect();
+//        for (String s: Strings) {
+//            assertTrue(keys.contains(s));
+//        }
+//    }
 
     public static void main(String[] args) {
         jh61b.junit.TestRunner.runTests(TestMyTrieSet.class);
